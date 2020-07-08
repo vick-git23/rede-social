@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<label for="nomeUsuario">Nome de Usuario:</label>
+	<input id="nomeUsuario" name="nomeUsuario">
+	<label for="senha">Senha:</label>
+	<input id="senha" name="senha">
+
+	<button onclick="entrar()">Entrar</button>
+	<button onclick="cadastrar()">Cadastrar</button>
+	<button onclick="mostrarUsuario()">Mostrar usuario</button>
+	
+	<script>
+		var usuarios = []
+
+		function cadastrarNovoUsuario(){
+			// pegar o que a pessoa digitou no input nomeUsuario
+			let nomeUsuario = document.getElementById("nomeUsuario").value
+			// pegar o que a pessoa digitou no input senha
+			let senha = document.getElementById("senha").value
+
+			// verificar se o nomeUsuario digitado nao é vazio
+			if (nomeUsuario===""){
+				// mostrar para o usuario que o nome de usuario é invalido
+				alert("nome de usuario vazio")
+				// parar de executar a minha funcao
+				return;
+			}
+
+			// verificar se a senha digitado nao é vazio
+			if (senha===""){
+				alert("senha vazia é invalida")
+				return;
+			}
+
+			// criar novo objeto do novo usuario
+			let novoUsuario = {nomeUsuario: nomeUsuario, senha: senha}
+
+			// salva novo usuario na lista
+			usuarios.push(novoUsuario)
+		}
+
+		function entrar(){
+			// pegar o que a pessoa digitou no input nomeUsuario
+			let nomeUsuario = document.getElementById("nomeUsuario").value
+			// pegar o que a pessoa digitou no input senha
+			let senha = document.getElementById("senha").value
+
+			// verificar se o nomeUsuario digitado nao é vazio
+			if (nomeUsuario===""){
+				// mostrar para o usuario que o nome de usuario é invalido
+				alert("nome de usuario vazio")
+				//parar de executar a minha funcao
+				return;
+			}
+
+			// verificar se senha digitado nao é vazio
+			if (senha===""){
+				alert("senha vazia é invalida")
+				return;
+			}
+
+			// OBS: TRANSFORME ISSO EM UM FOR QUE VERIFICA SE O NOME DE USUARIO E SENHA DIGITADOS EXISTEM NA LISTA USUARIOS
+
+			// verifica se a primeira posicao da lista tem o nome de usuario e senha que foram digitados
+			if (usuario[0].nomeUsuario === nomeUsuario && usuarios[0].senha === senha){
+				// logado
+			}
+
+			// verifique se a segunda posicao da lista tem o nome de usuario e senha que foram digitados
+			if (usuario[1].nomeUsuario === nomeUsuario && usuarios[1].senha === senha){
+				// logado
+			}
+
+			if (usuario[2].nomeUsuario === nomeUsuario && usuarios[2].senha === senha){
+				// logado
+			}
+		}
+
+		function mostrarUsuario(){
+			console.log(usuarios)
+		}
+
+	</script>
+</body>
+</html>
