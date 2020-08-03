@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Facebook</title>
+	<link rel="stylesheet" type="text/css" href="reset.css"/>
+	<link rel="stylesheet" type="text/css" href="login.css"/>
+	<link rel="stylesheet" type="text/html" href="entrar.html"/>
+	<link rel="stylesheet" type="text/css" href="entrar.css"/>
+
+	<style type="text/css">
+		#bt {
+			width: 200px;
+			height: 38px;
+			margin-bottom: 10px;
+			background-color: #69a74e;
+			color: white;
+			font-size: 19px;
+			border-radius: 5px;
+		}
+
+		#bottom {
+			background-color: #3b5998;
+			color: white;
+			border: 1px solid black;
+
+		}
+
+		#email {
+			width: 200px;
+			height: 38px;
+			margin-bottom: 10px;
+			font-size: 19px;
+		}
+
+		#cadastrarSenha {
+			width: 200px;
+			height: 38px;
+			margin-bottom: 10px;
+			font-size: 19px;
+		}
+
+		#nomeUsuario {
+			width: 140px;
+			height: 18px;
+			margin-right: 15px;
+			border-color: #1d2a5b;
+			border: 1px solid black;
+		}
+
+		#senha {
+			width: 140px;
+			height: 18px;
+			margin-right: 15px;
+			border-color: #1d2a5b;
+			border: 1px solid black;
+		}
+
+		#pAzul {
+			margin-bottom: 5px;
+		}
+	</style>
+</head>
+
+<body>
+		<h1 class="titulo-principal">Facebook</h1>
+
+		<div class="primeiro-acesso">
+			<div style="display: inline-block;">
+				<p id="pAzul">Nome de Usuario:</p>
+				<input id="nomeUsuario" name="nomeUsuario">
+			</div>
+
+			<div style="display: inline-block;">
+				<p id="pAzul">Senha:</p>
+				<input id="senha" name="senha">
+			</div>
+
+				<button id="bottom" onclick="entrar()">Entrar</button>
+		</div>
+
+	<main>
+		<div class="imagem">
+			<img src="rede social.jpg" alt="Imagem de conexao" class="imagem">
+		</div>
+
+		<div class="segundo-acesso">
+				<p class="texto1">Abra uma conta</p>
+				<p class="texto2">É rápido e fácil</p>
+
+				<div>
+					<input type="email" name="email" id="email" placeholder="Nome ou e-mail">
+				</div>
+
+				<div>
+					<input type="cadastrarSenha" name="cadastrarSenha" id="cadastrarSenha" placeholder="Cadastrar senha">
+				</div>
+
+				<button id="bt" onclick="cadastrarNovoUsuario()">Cadastrar</button>
+				<button id="bt" onclick="mostrarUsuario()">Mostrar usuario</button>
+		</div>
+	</main>
+
+	<script>
+		var usuarios = []
+
+		function cadastrarNovoUsuario(){
+			// pegar o que a pessoa digitou no input nomeUsuario
+			let email = document.getElementById("email").value
+			// pegar o que a pessoa digitou no input senha
+			let cadastrarSenha = document.getElementById("cadastrarSenha").value
+
+			// verificar se o nomeUsuario digitado nao é vazio
+			if (email === ""){
+				// mostrar para o usuario que o nome de usuario é invalido
+				alert("nome de usuario vazio")
+				// parar de executar a minha funcao
+				return;
+			}
+
+			// verificar se a senha digitado nao é vazio
+			if (cadastrarSenha === ""){
+				alert("senha vazia é invalida")
+				return;
+			}
+
+			for (let i = 0; i<usuarios.length; i++){
+				console.log(i, usuarios[i])
+				if (usuarios[i].email === usuarios[i]){
+					alert("nome de usuario ja existe")
+				}
+			}
+
+			// criar novo objecto do novo usuario
+			let email = {email: email, cadastrarSenha: cadastrarSenha}
+
+			// salva novo usuario na lista
+			usuarios.push(email)
+		}
+
+		function entrar(){
+			// pegar o que a pessoa digitou no input nomeUsuario
+			let nomeUsuario = document.getElementById("nomeUsuario").value
+			// pegar o que a pessoa digitou no input senha
+			let senha = document.getElementById("senha").value
+
+			// verificar se o nomeUsuario digitado nao é vazio
+			if (nomeUsuario === "") {
+				// mostrar para o usuario que o nome de usuario é invalido
+				alert("nome de usuario vazio")
+				//parar de executar a minha funcao
+				return;
+			}
+
+			// verificar se senha digitado nao é vazio
+			if (senha === ""){
+				alert("senha vazia é invalida")
+				return;
+			}
+
+			for (let i = 0; i<usuarios.length; i++){
+				// verifique se a segunda posiçao da lista tem o nome de usuario e senha que foram digitados
+				if (usuario[i].nomeUsuario === nomeUsuario && usuarios[i].senha === senha){
+					// logado
+					alert("logado")
+					// parar de executar a funcao
+					return;
+				}
+			}
+		}
+
+
+
+		function mostrarUsuario(){
+			console.log(usuarios)
+		}
+
+	</script>
+</body>
+</html>
