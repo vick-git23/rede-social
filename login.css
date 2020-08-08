@@ -4,8 +4,6 @@ body {
 
 main {
 	background: #f7f7f7;
-	clear: both;
-	content: '.';
 }
 
 .primeiro-acesso {
@@ -48,58 +46,4 @@ main {
 .texto2 {
 	font-size: 20px;
 	margin-bottom: 10px;
-}
-
-
-
-
-
-#bt {
-	width: 200px;
-	height: 38px;
-	margin-bottom: 10px;
-	background-color: #69a74e;
-	color: white;
-	font-size: 19px;
-	border-radius: 5px;
-}
-
-#bottom {
-	background-color: #3b5998;
-	color: white;
-	border: 1px solid black;
-}
-
-#email {
-	width: 200px;
-	height: 38px;
-	margin-bottom: 10px;
-	font-size: 19px;
-}
-
-#cadastrarSenha {
-	width: 200px;
-	height: 38px;
-	margin-bottom: 10px;
-	font-size: 19px;
-}
-
-#nomeUsuario {
-	width: 140px;
-	height: 18px;
-	margin-right: 15px;
-	border-color: #1d2a5b;
-	border: 1px solid black;
-}
-
-#senha {
-	width: 140px;
-	height: 18px;
-	margin-right: 15px;
-	border-color: #1d2a5b;
-	border: 1px solid black;
-}
-
-#pAzul {
-	margin-bottom: 5px;
 }

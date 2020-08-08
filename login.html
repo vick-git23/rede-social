@@ -5,8 +5,7 @@
 	<link rel="stylesheet" type="text/css" href="reset.css"/>
 	<link rel="stylesheet" type="text/css" href="login.css"/>
 	<link rel="stylesheet" type="text/html" href="entrar.html"/>
-	<link rel="stylesheet" type="text/css" href="entrar.css"/>
-
+	
 	<style type="text/css">
 		#bt {
 			width: 200px;
@@ -16,6 +15,8 @@
 			color: white;
 			font-size: 19px;
 			border-radius: 5px;
+			border: 1px solid;
+			border-color: #3b6e22 #3b5e22 #2c5115;
 		}
 
 		#bottom {
@@ -26,17 +27,23 @@
 		}
 
 		#email {
-			width: 200px;
+			width: 405px;
 			height: 38px;
 			margin-bottom: 10px;
 			font-size: 19px;
+			border-radius: 5px;
+			border-color: #bdc7d8;
+			border: 1px solid #ccd0d5;
 		}
 
 		#cadastrarSenha {
-			width: 200px;
+			width: 405px;
 			height: 38px;
 			margin-bottom: 10px;
 			font-size: 19px;
+			border-radius: 5px;
+			border-color: #bdc7d8;
+			border: 1px solid #ccd0d5;
 		}
 
 		#nomeUsuario {
@@ -101,7 +108,7 @@
 	</main>
 
 	<script>
-		var usuarios = []
+		var usuarios = JSON.parse(localStorage.getItem("usuarios"))
 
 		function cadastrarNovoUsuario(){
 			// pegar o que a pessoa digitou no input nomeUsuario
@@ -131,10 +138,11 @@
 			}
 
 			// criar novo objecto do novo usuario
-			let email = {email: email, cadastrarSenha: cadastrarSenha}
+			let novoUsuario = {emailCadastrado: email, senhaCadastrada: cadastrarSenha}
 
 			// salva novo usuario na lista
-			usuarios.push(email)
+			usuarios.push(novoUsuario)
+			localStorage.setItem("usuarios", JSON.stringify(usuarios))
 		}
 
 		function entrar(){
@@ -145,7 +153,7 @@
 
 			// verificar se o nomeUsuario digitado nao é vazio
 			if (nomeUsuario === "") {
-				// mostrar para o usuario que o nome de usuario é invalido
+				// mostrar para o usuario que o nome de usuario esta vazio
 				alert("nome de usuario vazio")
 				//parar de executar a minha funcao
 				return;
@@ -153,22 +161,23 @@
 
 			// verificar se senha digitado nao é vazio
 			if (senha === ""){
+				// mostrar para o meu usuario que a senha esta vazia
 				alert("senha vazia é invalida")
+				// parar de executar a minha funcao
 				return;
 			}
 
 			for (let i = 0; i<usuarios.length; i++){
 				// verifique se a segunda posiçao da lista tem o nome de usuario e senha que foram digitados
-				if (usuario[i].nomeUsuario === nomeUsuario && usuarios[i].senha === senha){
+				if (usuarios[i].novoUsuario === nomeUsuario && usuarios[i].novoUsuario === senha){
 					// logado
 					alert("logado")
 					// parar de executar a funcao
 					return;
 				}
+				window.location.href = "entrar.html";
 			}
 		}
-
-
 
 		function mostrarUsuario(){
 			console.log(usuarios)

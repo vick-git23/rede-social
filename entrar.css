@@ -1,0 +1,19 @@
+.texto {
+	float: left;
+	margin-top: 5px;
+	margin-right: 5px;
+	margin-left: 5px;
+	margin-bottom: 5px;
+}
+
+.postagem {
+
+}
+
+.postar {
+	margin-left: 5px;
+}
+
+.sair {
+	margin-top: 30px;
+}
