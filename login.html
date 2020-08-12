@@ -91,19 +91,19 @@
 		</div>
 
 		<div class="segundo-acesso">
-				<p class="texto1">Abra uma conta</p>
-				<p class="texto2">É rápido e fácil</p>
+			<p class="texto1">Abra uma conta</p>
+			<p class="texto2">É rápido e fácil</p>
 
-				<div>
-					<input type="email" name="email" id="email" placeholder="Nome ou e-mail">
-				</div>
+			<div>
+				<input type="email" name="email" id="email" placeholder="Nome ou e-mail">
+			</div>
 
-				<div>
-					<input type="cadastrarSenha" name="cadastrarSenha" id="cadastrarSenha" placeholder="Cadastrar senha">
-				</div>
+			<div>
+				<input type="cadastrarSenha" name="cadastrarSenha" id="cadastrarSenha" placeholder="Cadastrar senha">
+			</div>
 
-				<button id="bt" onclick="cadastrarNovoUsuario()">Cadastrar</button>
-				<button id="bt" onclick="mostrarUsuario()">Mostrar usuario</button>
+			<button id="bt" onclick="cadastrarNovoUsuario()">Cadastrar</button>
+			<button id="bt" onclick="mostrarUsuario()">Mostrar usuario</button>
 		</div>
 	</main>
 
@@ -169,7 +169,7 @@
 
 			for (let i = 0; i<usuarios.length; i++){
 				// verifique se a segunda posiçao da lista tem o nome de usuario e senha que foram digitados
-				if (usuarios[i].novoUsuario === nomeUsuario && usuarios[i].novoUsuario === senha){
+				if (usuarios[i].nomeUsuario === nomeUsuario && usuarios[i].senha === senha){
 					// logado
 					alert("logado")
 					// parar de executar a funcao

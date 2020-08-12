@@ -11,11 +11,19 @@
 	<div class="postagem">
 		<p class="texto">O que está pensando hoje?</p>
 		<textarea></textarea>
-		<button class="postar">Postar</button>
+		<button onclick="postar()">Postar</button>
 	</div>
 
 	<div>
-		<button class="Deslogar">Deslogar</button>
+		<button onclick="sair()">Sair</button>
 	</div>
+
+	<h2>Segestão de Amigos</h2>
+
+	<script>
+		function sair() {
+			window.location.href = "login.html"; 
+		}
+	</script>
 </body>
 </html>
