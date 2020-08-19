@@ -107,17 +107,18 @@
 		</div>
 	</main>
 
+	<script src="script.js"></script>
 	<script>
 		var usuarios = JSON.parse(localStorage.getItem("usuarios"))
 
 		function cadastrarNovoUsuario(){
 			// pegar o que a pessoa digitou no input nomeUsuario
-			let email = document.getElementById("email").value
+			let nomeUsuario = document.getElementById("email").value
 			// pegar o que a pessoa digitou no input senha
-			let cadastrarSenha = document.getElementById("cadastrarSenha").value
+			let senha = document.getElementById("cadastrarSenha").value
 
 			// verificar se o nomeUsuario digitado nao é vazio
-			if (email === ""){
+			if (nomeUsuario === ""){
 				// mostrar para o usuario que o nome de usuario é invalido
 				alert("nome de usuario vazio")
 				// parar de executar a minha funcao
@@ -125,7 +126,7 @@
 			}
 
 			// verificar se a senha digitado nao é vazio
-			if (cadastrarSenha === ""){
+			if (senha === ""){
 				alert("senha vazia é invalida")
 				return;
 			}
@@ -138,18 +139,23 @@
 			}
 
 			// criar novo objecto do novo usuario
-			let novoUsuario = {emailCadastrado: email, senhaCadastrada: cadastrarSenha}
 
-			// salva novo usuario na lista
-			usuarios.push(novoUsuario)
-			localStorage.setItem("usuarios", JSON.stringify(usuarios))
+			const novoUsuario = {id: pegaNovoId(), nomeUsuario: nomeUsuario, senha: senha};
+            
+            if(criarUsuario(novoUsuario)){
+                document.getElementById("email").value = "";
+                document.getElementById("cadastrarSenha").value = "";
+                alert("Novo usuario criado");    
+            }else{
+                alert("ocorreu um erro na criação do usuario !");    
+            }
 		}
 
 		function entrar(){
 			// pegar o que a pessoa digitou no input nomeUsuario
-			let nomeUsuario = document.getElementById("nomeUsuario").value
+			var nomeUsuario = document.getElementById("nomeUsuario").value
 			// pegar o que a pessoa digitou no input senha
-			let senha = document.getElementById("senha").value
+			var senha = document.getElementById("senha").value
 
 			// verificar se o nomeUsuario digitado nao é vazio
 			if (nomeUsuario === "") {
@@ -159,7 +165,7 @@
 				return;
 			}
 
-			// verificar se senha digitado nao é vazio
+			// verificarr se senha digitado nao é vazio
 			if (senha === ""){
 				// mostrar para o meu usuario que a senha esta vazia
 				alert("senha vazia é invalida")
@@ -167,20 +173,19 @@
 				return;
 			}
 
-			for (let i = 0; i<usuarios.length; i++){
-				// verifique se a segunda posiçao da lista tem o nome de usuario e senha que foram digitados
-				if (usuarios[i].nomeUsuario === nomeUsuario && usuarios[i].senha === senha){
-					// logado
-					alert("logado")
-					// parar de executar a funcao
-					return;
-				}
-				window.location.href = "entrar.html";
-			}
+			const usuarioLogado = logar(nomeUsuario,senha);
+            if(usuarioLogado){
+                localStorage.setItem('usuarioLogado', JSON.stringify(usuarioLogado));
+                window.location.href = "entrar.html"; 
+            }else{
+                document.getElementById("nomeUsuario").value = "";
+                document.getElementById("senha").value = "";
+                alert("Nome de usuario ou senha incorretas");
+            }
 		}
 
 		function mostrarUsuario(){
-			console.log(usuarios)
+			console.log(usuariosAtuais())
 		}
 
 	</script>

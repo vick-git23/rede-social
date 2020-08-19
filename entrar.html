@@ -18,12 +18,48 @@
 		<button onclick="sair()">Sair</button>
 	</div>
 
-	<h2>Segestão de Amigos</h2>
+	<div id="sugestaoAmigos">
+		<h2>Segestão de Amigos</h2>
+		<div id="usuarioAdicionado">
+			
+		</div>
+	</div>
 
+	<script src="script.js"></script>
 	<script>
+		function postar() {
+			
+		}
+
+		function carregarSugestaoAmigos() {
+			let container = document.getElementById("usuarioAdicionar")
+            let usuariosAmigos = usuariosAtuais();
+
+            for(let i=0; i<usuariosAmigos.length; i++){
+
+                console.log("opa")
+                //cria paragrafo que aparece nome do usuario
+                let nomeUsuario = document.createElement("p");
+                nomeUsuario.innerHTML = usuariosAmigos[i].nomeUsuario;
+
+                let botaoAdicionar = document.createElement("button");
+                botaoAdicionar.innerHTML = "Adicionar Amigo"
+                botaoAdicionar.setAttribute("onclick",`usuarioAdicionar(${usuariosAmigos[i].id})`)
+
+                container.appendChild(nomeUsuario);
+                container.appendChild(botaoAdicionar);
+            }
+		} 
+
+		function usuarioAdicionar(idAmigo) {
+			alert(`adicionando amigo com id ${idAmigo}`)
+		}
+
 		function sair() {
 			window.location.href = "login.html"; 
 		}
+
+		carregarSugestaoAmigos();
 	</script>
 </body>
 </html>
