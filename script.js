@@ -38,3 +38,4 @@ function criarUsuario(novoUsuario){
     localStorage.setItem('usuarios', JSON.stringify(usuarios));
     return true;
 }
+

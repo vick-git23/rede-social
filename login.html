@@ -2,6 +2,7 @@
 <html>
 <head>
 	<title>Facebook</title>
+	<link rel="icon" type="imge/gif" href="facebook.jpg" sizes="16x16">
 	<link rel="stylesheet" type="text/css" href="reset.css"/>
 	<link rel="stylesheet" type="text/css" href="login.css"/>
 	<link rel="stylesheet" type="text/html" href="entrar.html"/>
@@ -74,12 +75,12 @@
 		<div class="primeiro-acesso">
 			<div style="display: inline-block;">
 				<p id="pAzul">Nome de Usuario:</p>
-				<input id="nomeUsuario" name="nomeUsuario">
+				<input id="nomeUsuario" name="nomeUsuario" placeholder="Digite seu usuario">
 			</div>
 
 			<div style="display: inline-block;">
 				<p id="pAzul">Senha:</p>
-				<input id="senha" name="senha">
+				<input id="senha" name="senha" placeholder="Digite sua senha">
 			</div>
 
 				<button id="bottom" onclick="entrar()">Entrar</button>
@@ -110,12 +111,15 @@
 	<script src="script.js"></script>
 	<script>
 		var usuarios = JSON.parse(localStorage.getItem("usuarios"))
+		if (!usuarios){
+			usuarios = [];
+		}
 
 		function cadastrarNovoUsuario(){
 			// pegar o que a pessoa digitou no input nomeUsuario
-			let nomeUsuario = document.getElementById("email").value
+			var nomeUsuario = document.getElementById("email").value
 			// pegar o que a pessoa digitou no input senha
-			let senha = document.getElementById("cadastrarSenha").value
+			var senha = document.getElementById("cadastrarSenha").value
 
 			// verificar se o nomeUsuario digitado nao é vazio
 			if (nomeUsuario === ""){
@@ -133,7 +137,7 @@
 
 			for (let i = 0; i<usuarios.length; i++){
 				console.log(i, usuarios[i])
-				if (usuarios[i].email === usuarios[i]){
+				if (usuarios[i].nomeUsuario === usuarios[i]){
 					alert("nome de usuario ja existe")
 				}
 			}

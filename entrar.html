@@ -2,24 +2,31 @@
 <html>
 <head>
 	<title>Facebook</title>
-	<link rel="stylesheet" type="text/html" href="login.html">
+	<link rel="icon" type="imge/gif" href="facebook.jpg" sizes="16x16">
 	<link rel="stylesheet" type="text/css" href="entrar.css">
 </head>
 
 <body>
-	<h1>LOGADO !!</h1>
-	<div class="postagem">
-		<p class="texto">O que está pensando hoje?</p>
-		<textarea></textarea>
-		<button onclick="postar()">Postar</button>
-	</div>
+	<h1 class="titulo-principal"><center>Facebook</center></h1>
 
-	<div>
+	<div class="painel">
+		<div>
 		<button onclick="sair()">Sair</button>
+		</div>
+
+		<p>Amigos</p>
 	</div>
 
-	<div id="sugestaoAmigos">
-		<h2>Segestão de Amigos</h2>
+	<div class="postagem">
+		<div>
+			<p class="texto">O que está pensando hoje?</p>
+			<textarea></textarea>
+			<button onclick="postar()">Postar</button>
+		</div>
+	</div>
+
+	<div class="sugestaoAmigos">
+		<h2><center>Segestão de Amigos</center></h2>
 		<div id="usuarioAdicionado">
 			
 		</div>
@@ -32,7 +39,7 @@
 		}
 
 		function carregarSugestaoAmigos() {
-			let container = document.getElementById("usuarioAdicionar")
+			let container = document.getElementById("usuarioAdicionado")
             let usuariosAmigos = usuariosAtuais();
 
             for(let i=0; i<usuariosAmigos.length; i++){
@@ -44,10 +51,11 @@
 
                 let botaoAdicionar = document.createElement("button");
                 botaoAdicionar.innerHTML = "Adicionar Amigo"
-                botaoAdicionar.setAttribute("onclick",`usuarioAdicionar(${usuariosAmigos[i].id})`)
+                botaoAdicionar.setAttribute("onclick",`usuarioAdicionado(${usuariosAmigos[i].id})`)
 
                 container.appendChild(nomeUsuario);
                 container.appendChild(botaoAdicionar);
+                
             }
 		} 
 
