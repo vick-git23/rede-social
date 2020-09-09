@@ -7,34 +7,62 @@
 </head>
 
 <body>
-	<h1 class="titulo-principal"><center>Facebook</center></h1>
+	<div class="titulo-principal">
+		<h1><center>Facebook</center></h1>
+	</div>
 
 	<div class="painel">
-		<div>
-		<button onclick="sair()">Sair</button>
+		<div class="esquerda">
+			<div class="informacoes">
+				<div>
+				<button onclick="sair()">Sair</button>
+				</div>
+
+				<p>Amigos</p>
+			</div>
 		</div>
 
-		<p>Amigos</p>
-	</div>
+		<div class="centro">
+			<div class="escrever">
+				<div class="texto">
+					<label>No que você está pensando hoje?</label>
+				</div>
+				<p contenteditable = "true" id="caixaTexto" class="caixaTexto"></p>
+				<button onclick="postar()">Postar</button>
+			</div>
 
-	<div class="postagem">
-		<div>
-			<p class="texto">O que está pensando hoje?</p>
-			<textarea></textarea>
-			<button onclick="postar()">Postar</button>
+			<div class="postagem">
+				<div id="publicacoes">
+					
+				</div>
+			</div>
 		</div>
-	</div>
 
-	<div class="sugestaoAmigos">
-		<h2><center>Segestão de Amigos</center></h2>
-		<div id="usuarioAdicionado">
-			
+		<div class="direita">
+			<div class="sugestaoAmigos">
+				<h2><center>Segestão de Amigos</center></h2>
+				<div id="usuarioAdicionado">
+					
+				</div>
+			</div>
 		</div>
 	</div>
 
 	<script src="script.js"></script>
 	<script>
 		function postar() {
+			var posts = document.getElementById("caixaTexto").value
+
+			// verificar se caixaTexto nao é vazio
+			if (posts === "") {
+				// mostrar para o usuario que o nome de usuario esta vazio
+				alert("Caixa de texto vazia")
+				// parar de executar a funcao
+				return;
+			}
+
+			var posts = document.getElementById("caixaTexto").innerHTML;
+			document.getElementById("publicacoes").innerHTML = posts;
 			
 		}
 

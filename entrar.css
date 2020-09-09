@@ -5,7 +5,6 @@ body {
 }
 
 .texto {
-	float: left;
 	margin-top: 5px;
 	margin-right: 5px;
 	margin-left: 5px;
@@ -15,44 +14,53 @@ body {
 .titulo-principal {
 	display: inline;
 	float: left;
-	padding-top: 20px;
 	background-color: #49649f;
-	padding-bottom: 20px;
 	width: 100%;
-	margin: 0px;
 	margin-bottom: 20px;
 }
 
 h1 {
 	font-size: 36px;
 	color: white;
-	margin-left: 50px;
 }
 
-.painel {
+.informacoes {
 	float: left;
 	background-color: white;
 	margin-bottom: 15px;
 	margin-right: 15px;
 	margin-left: 7px;
-	border: 1px solid black;
+	border: 1px solid #ccc!important;
 	width: 21%;
 	border-radius: 6px;
 	padding: 10px;
 }
 
-.postagem {
-	margin-left: 327px;
-	margin-right: 330px;
+.centro {
+	float: left;
+}
 
+.escrever {
 	width: 673px;
 	background-color: white;
-	margin-bottom: 15px;
-	border: 1px solid black;
-	position: absolute;
-	margin-top: 102px;
+	border: 1px solid #ccc!important;
 	border-radius: 6px;
 	padding: 10px;
+}
+
+.postagem {
+	width: 673px;
+	background-color: white;
+	margin-top: 15px;
+	border: 1px solid #ccc!important;
+	position: absolute;
+	border-radius: 6px;
+	padding: 10px;
+}
+
+.caixaTexto {
+	padding: 8px 16px!important;
+	border: 1px solid #ccc!important;
 }
 
 .postar {
@@ -68,10 +76,10 @@ h2 {
 	width: 21%;
 	float: right;
 	background-color: white;
-	margin-bottom: 15px;
-	margin-right: 7px;
+	margin-bottom: 20px;
+	margin-right: 6px;
 	margin-left: 15px;
-	border: 1px solid black;
+	border: 1px solid #ccc!important;
 	border-radius: 6px;
 	padding: 10px;
 }

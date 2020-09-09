@@ -116,9 +116,9 @@
 		}
 
 		function cadastrarNovoUsuario(){
-			// pegar o que a pessoa digitou no input nomeUsuario
+			// pegar o que a pessoa digitou no input email
 			var nomeUsuario = document.getElementById("email").value
-			// pegar o que a pessoa digitou no input senha
+			// pegar o que a pessoa digitou no input cadastrarSenha
 			var senha = document.getElementById("cadastrarSenha").value
 
 			// verificar se o nomeUsuario digitado nao é vazio
@@ -169,7 +169,7 @@
 				return;
 			}
 
-			// verificarr se senha digitado nao é vazio
+			// verificar se senha digitado nao é vazio
 			if (senha === ""){
 				// mostrar para o meu usuario que a senha esta vazia
 				alert("senha vazia é invalida")
