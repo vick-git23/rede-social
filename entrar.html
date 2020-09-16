@@ -51,7 +51,7 @@
 	<script src="script.js"></script>
 	<script>
 		function postar() {
-			let container = document.getElementById("postagem") 
+			let container = document.getElementById("posts") 
 			let posts = document.getElementById("caixaTexto").innerHTML
 
 			// verificar se caixaTexto nao é vazio
@@ -64,10 +64,12 @@
 
 			// criar paragrafo que aparece nome do usuario
 			let nomeUsuario = document.createElement("p");
-			nomeUsuario.innerHTML = logar.nomeUsuario;
+			nomeUsuario.innerHTML = JSON.parse(localStorage.getItem("usuarioLogado")).nomeUsuario;			
 
-			document.getElementById("publicacoes").innerHTML = posts;
-			
+			publicacoes.appendChild(nomeUsuario);
+			document.getElementById("publicacoes").innerHTML += posts;
+
+
 		}
 
 		function carregarSugestaoAmigos() {
