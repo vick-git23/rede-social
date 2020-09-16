@@ -180,7 +180,7 @@
 			const usuarioLogado = logar(nomeUsuario,senha);
             if(usuarioLogado){
                 localStorage.setItem('usuarioLogado', JSON.stringify(usuarioLogado));
-                window.location.href = "entrar.html"; 
+                window.location.href = "entrar.html";
             }else{
                 document.getElementById("nomeUsuario").value = "";
                 document.getElementById("senha").value = "";

@@ -51,7 +51,8 @@
 	<script src="script.js"></script>
 	<script>
 		function postar() {
-			var posts = document.getElementById("caixaTexto").value
+			let container = document.getElementById("postagem") 
+			let posts = document.getElementById("caixaTexto").innerHTML
 
 			// verificar se caixaTexto nao é vazio
 			if (posts === "") {
@@ -61,7 +62,10 @@
 				return;
 			}
 
-			var posts = document.getElementById("caixaTexto").innerHTML;
+			// criar paragrafo que aparece nome do usuario
+			let nomeUsuario = document.createElement("p");
+			nomeUsuario.innerHTML = logar.nomeUsuario;
+
 			document.getElementById("publicacoes").innerHTML = posts;
 			
 		}
