@@ -18,7 +18,8 @@
 				<button onclick="sair()">Sair</button>
 				</div>
 
-				<p>Amigos</p>
+				<p id="amigos">Amigos</p>
+				<p id="amizadeSolicitada">Solicitação de Amizade</p>
 			</div>
 		</div>
 
@@ -31,16 +32,13 @@
 				<button onclick="postar()">Postar</button>
 			</div>
 
-			<div class="postagem">
-				<div id="publicacoes">
+			<div id="publicacoes">
 					
-				</div>
 			</div>
-		</div>
 
 		<div class="direita">
 			<div class="sugestaoAmigos">
-				<h2><center>Segestão de Amigos</center></h2>
+				<h2><center>Sugestão de Amigos</center></h2>
 				<div id="usuarioAdicionado">
 					
 				</div>
@@ -65,11 +63,10 @@
 			let publicacoes = document.getElementById("publicacoes")
 
 			// criar paragrafo que aparece nome do usuario
-			let nomeUsuario = document.createElement("p");
-			nomeUsuario.innerHTML = JSON.parse(localStorage.getItem("usuarioLogado")).nomeUsuario;			
+			let nomeUsuario = JSON.parse(localStorage.getItem("usuarioLogado")).nomeUsuario;
 
-			publicacoes.appendChild(nomeUsuario);
-			publicacoes.innerHTML += `<div><p>${nomeUsuario}</p><div class="postagem">${posts}</div></div>`;
+			//publicacoes.appendChild(nomeUsuario);
+			publicacoes.innerHTML += `<div class="postagem"><p>${nomeUsuario}</p>${posts}</div>`;
 			console.log(publicacoes)
 		}
 
@@ -92,9 +89,10 @@
                 container.appendChild(botaoAdicionar);
                 
             }
-		} 
+		}
 
-		function usuarioAdicionar(idAmigo) {
+		function usuarioAdicionado(idAmigo) {
+
 			alert(`adicionando amigo com id ${idAmigo}`)
 		}
 

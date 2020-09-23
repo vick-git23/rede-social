@@ -144,7 +144,7 @@
 
 			// criar novo objecto do novo usuario
 
-			const novoUsuario = {id: pegaNovoId(), nomeUsuario: nomeUsuario, senha: senha, amigos: amigos};
+			const novoUsuario = {id: pegaNovoId(), nomeUsuario: nomeUsuario, senha: senha, amigos: amigos()};
             
             if(criarUsuario(novoUsuario)){
                 document.getElementById("email").value = "";

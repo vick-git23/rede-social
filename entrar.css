@@ -36,11 +36,8 @@ h1 {
 	padding: 10px;
 }
 
-.centro {
-	float: left;
-}
-
 .escrever {
+	float: left;
 	width: 673px;
 	background-color: white;
 	border: 1px solid #ccc!important;
@@ -48,7 +45,7 @@ h1 {
 	padding: 10px;
 }
 
-.postagem {
+.postage {
 	width: 673px;
 	background-color: white;
 	margin-top: 15px;
