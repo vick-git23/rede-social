@@ -24,6 +24,15 @@ h1 {
 	color: white;
 }
 
+.centro {
+	float: left;
+	width: 695px;
+}
+
+.direita {
+	
+}
+
 .informacoes {
 	float: left;
 	background-color: white;
@@ -34,24 +43,23 @@ h1 {
 	width: 21%;
 	border-radius: 6px;
 	padding: 10px;
+	height: 500px;
 }
 
 .escrever {
-	float: left;
-	width: 673px;
 	background-color: white;
 	border: 1px solid #ccc!important;
 	border-radius: 6px;
 	padding: 10px;
 }
 
-.postage {
+.postagem {
 	width: 673px;
 	background-color: white;
 	margin-top: 15px;
 	margin-bottom: 15px;
 	border: 1px solid #ccc!important;
-	position: absolute;
+	position: relative;
 	border-radius: 6px;
 	padding: 10px;
 }
