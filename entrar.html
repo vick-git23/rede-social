@@ -64,7 +64,7 @@
 			let publicacoes = document.getElementById("publicacoes")
 
 			// criar paragrafo que aparece nome do usuario
-			let nomeUsuario = JSON.parse(localStorage.getItem("usuarioLogado")).nomeUsuario;
+			let nomeUsuario = retornaUsuarioLogado();
 
 			//publicacoes.appendChild(nomeUsuario);
 			publicacoes.innerHTML += `<div class="postagem"><p>${nomeUsuario}</p>${posts}</div>`;
