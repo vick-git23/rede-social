@@ -69,7 +69,20 @@
 			//publicacoes.appendChild(nomeUsuario);
 			publicacoes.innerHTML += `<div class="postagem"><p>${nomeUsuario}</p>${posts}</div>`;
 			console.log(publicacoes)
-		}
+
+			let meuPost = {
+				nomeUsuario: nomeUsuario,
+				postagem: posts
+			}
+
+			let todosOsPosts = JSON.parse(localStorage.getItem("publicacoes"))
+				if (!todosOsPosts) {
+					todosOsPosts = []
+				}
+
+				todosOsPosts.push(meuPost);
+				localStorage.setItem("publicacoes", JSON.stringify(todosOsPosts))
+			}
 
 		function carregarSugestaoAmigos() {
 			let container = document.getElementById("usuarioAdicionado")

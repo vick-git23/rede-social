@@ -3,7 +3,7 @@ function usuariosAtuais(){
 }
 
 function retornaUsuarioLogado(){
-    return JSON.parse(localStorage.getItem("UsuarioLogado")).nomeUsuario;
+    return JSON.parse(localStorage.getItem("usuarioLogado")).nomeUsuario;
 }
 
 function pegaNovoId(){
@@ -42,6 +42,4 @@ function criarUsuario(novoUsuario){
     localStorage.setItem('usuarios', JSON.stringify(usuarios));
     return true;
 }
-
-
 
