@@ -11,6 +11,12 @@
 		<h1><center>Facebook</center></h1>
 	</div>
 
+	<div class="abas">
+		<button class=""></button>
+		<button class="conversas">Conversas</button>
+		<button class="status">Status</button>
+	</div>
+
 	<div class="painel">
 		<div class="esquerda">
 			<div class="informacoes">
@@ -67,7 +73,7 @@
 			let nomeUsuario = retornaUsuarioLogado();
 
 			//publicacoes.appendChild(nomeUsuario);
-			publicacoes.innerHTML += `<div class="postagem"><p>${nomeUsuario}</p>${posts}</div>`;
+			publicacoes.innerHTML = `<div class="postagem"><p>${nomeUsuario}</p>${posts}</div>`+publicacoes.innerHTML;
 			console.log(publicacoes)
 
 			let meuPost = {
@@ -75,13 +81,14 @@
 				postagem: posts
 			}
 
-			let todosOsPosts = JSON.parse(localStorage.getItem("publicacoes"))
+			let todosOsPosts = retornaTodosOsPosts();
 				if (!todosOsPosts) {
 					todosOsPosts = []
 				}
 
 				todosOsPosts.push(meuPost);
-				localStorage.setItem("publicacoes", JSON.stringify(todosOsPosts))
+				todosOsPosts.reverse();
+				joice(todosOsPosts);
 			}
 
 		function carregarSugestaoAmigos() {

@@ -43,3 +43,11 @@ function criarUsuario(novoUsuario){
     return true;
 }
 
+function retornaTodosOsPosts(){
+    return JSON.parse(localStorage.getItem("publicacoes"))
+    }
+
+function joice(todosOsPosts){
+    return localStorage.setItem("publicacoes", JSON.stringify(todosOsPosts))
+}
+
