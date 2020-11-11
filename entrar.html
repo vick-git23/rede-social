@@ -7,59 +7,103 @@
 </head>
 
 <body>
-	<div class="titulo-principal">
-		<h1><center>Facebook</center></h1>
+	<div class="linha"></div>
+	<div class="titulo">
+		<h1>Facebook</h1>
+		
+		<button id="sair" onclick="sair()">Sair</button>
 	</div>
 
-	<div class="abas">
-		<button class=""></button>
-		<button class="conversas">Conversas</button>
-		<button class="status">Status</button>
+	<div>
+		<center>
+			<button id="aba1" onclick="perfil()">Perfil</button>
+			<button id="aba2" onclick="conversas()">Conversas</button>
+			<button id="aba3" onclick="postagens()">Postagens</button>
+		</center>
 	</div>
 
-	<div class="painel">
-		<div class="esquerda">
-			<div class="informacoes">
+	<div>
+		
+	</div>
+
+		<div id="parteDoPerfil" class="visivel">
+			<div>
+				<div class="informacoes">
+					<p id="amigos">Amigos</p>
+					<p id="amizadeSolicitada">Solicitação de Amizade</p>
+				</div>
+			</div>
+
+			<div class="meusPostsNoPerfil">
+				<div class="escrever1">
+					<div class="texto1">
+						<label>No que você está pensando hoje?</label>
+					</div>
+					<p contenteditable = "true" id="caixaTexto1" class="caixaTexto1"></p>
+					<button onclick="postar()">Postar</button>
+				</div>
+				<div id="publicacoes"></div>
+			</div>
+		</div>
+
+		<div id="parteDaConversa" class="invisivel">
+			<div class="caixaConversa">
 				<div>
-				<button onclick="sair()">Sair</button>
-				</div>
-
-				<p id="amigos">Amigos</p>
-				<p id="amizadeSolicitada">Solicitação de Amizade</p>
-			</div>
-		</div>
-
-		<div class="centro">
-			<div class="escrever">
-				<div class="texto">
-					<label>No que você está pensando hoje?</label>
-				</div>
-				<p contenteditable = "true" id="caixaTexto" class="caixaTexto"></p>
-				<button onclick="postar()">Postar</button>
-			</div>
-
-			<div id="publicacoes">
-					
-			</div>
-		</div>
-
-		<div class="direita">
-			<div class="sugestaoAmigos">
-				<h2><center>Sugestão de Amigos</center></h2>
-				<div id="usuarioAdicionado">
-					
+					<p contenteditable = "true" id="caixaMensagem" class="caixaMensagem"></p>
 				</div>
 			</div>
 		</div>
-	</div>
+
+		<div id="parteDasPostagens" class="invisivel">
+			<div>
+				<div class="sugestaoAmigos">
+					<h2><center>Sugestão de Amigos</center></h2>
+					<div id="usuarioAdicionado"></div>
+				</div>
+			</div>
+
+			<div class="centro">
+				<div class="escrever2">
+					<div class="texto2">
+						<label>No que você está pensando hoje?</label>
+					</div>
+					<p contenteditable = "true" id="caixaTexto2" class="caixaTexto2"></p>
+					<button onclick="postar()">Postar</button>
+				</div>
+				<div id="publicacoes"></div>
+			</div>
+		</div>	
 
 	<script src="falsoBackend.js"></script>
 	<script>
+		function perfil() {
+			document.getElementById("parteDasPostagens", "parteDaConversa").classList.remove("visivel");
+			document.getElementById("parteDasPostagens", "parteDaConversa").classList.add("invisivel");
+			document.getElementById("parteDoPerfil").classList.remove("invisivel");
+			document.getElementById("parteDoPerfil").classList.add("visivel");
+		}
+
+		// #49649f
+
+		function conversas() {
+			document.getElementById("parteDoPerfil", "parteDasPostagens").classList.remove("visivel");
+			document.getElementById("parteDoPerfil", "parteDasPostagens").classList.add("invisivel");
+			document.getElementById("parteDaConversa").classList.remove("invisivel");
+			document.getElementById("parteDaConversa").classList.add("visivel");
+		}
+
+		function postagens() {
+			document.getElementById("parteDoPerfil", "parteDaConversa").classList.remove("visivel");
+			document.getElementById("parteDoPerfil", "parteDaConversa").classList.add("invisivel");
+			document.getElementById("parteDasPostagens").classList.remove("invisivel");
+			document.getElementById("parteDasPostagens").classList.add("visivel");
+		}
+
 		function postar() {
-			let posts = document.getElementById("caixaTexto").innerHTML
+			let posts = document.getElementById("caixaTexto1", "caixaTexto2").innerHTML
 			console.log(posts)
 
-			// verificar se caixaTexto nao é vazio
+			// verificar se caixaTexto1 e 2 nao é vazio
 			if (posts === "") {
 				// mostrar para o usuario que o nome de usuario esta vazio
 				alert("Caixa de texto vazia")

@@ -4,33 +4,79 @@ body {
 	background-color: #e6e6ff;
 }
 
-.texto {
+.texto1 {
 	margin-top: 5px;
 	margin-right: 5px;
 	margin-left: 5px;
 	margin-bottom: 5px;
 }
 
-.titulo-principal {
+.texto2 {
+	margin-top: 5px;
+	margin-right: 5px;
+	margin-left: 5px;
+	margin-bottom: 5px;
+}
+
+.linha {
 	display: inline;
 	float: left;
-	background-color: #49649f;
+	background-color: #49559f6e;
 	width: 100%;
-	margin-bottom: 20px;
+	margin-bottom: 30px;
+	height: 15px;
+	margin-top: 30px;
+	z-index: 0;
+}
+
+.titulo {
+	position: absolute;
 }
 
 h1 {
-	font-size: 36px;
-	color: white;
+	font-size: 60px;
+	color: #8670a2;
+	margin-left: 191%;
+	margin-top: -2px;
+	margin-bottom: -10px;
+	text-shadow: white 1px 1px;
+}
+
+#aba1{
+	background-color: white;
+	border: 1px solid #ccc!important;
+	width: 200px;
+	height: 50px;
+}
+
+#aba2 {
+	background-color: white;
+	border: 1px solid #ccc!important;
+	width: 200px;
+	height: 50px;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+#aba3 {
+	background-color: white;
+	border: 1px solid #ccc!important;
+	width: 200px;
+	height: 50px;
+}
+
+.visivel {
+	display: block;
+}
+
+.invisivel {
+	display: none;
 }
 
 .centro {
 	float: left;
-	width: 695px;
-}
-
-.direita {
-	
+	width: 1003px;
+	margin-right: 10px; 
 }
 
 .informacoes {
@@ -38,7 +84,7 @@ h1 {
 	background-color: white;
 	margin-bottom: 15px;
 	margin-right: 15px;
-	margin-left: 7px;
+	margin-left: 15px;
 	border: 1px solid #ccc!important;
 	width: 21%;
 	border-radius: 6px;
@@ -46,7 +92,34 @@ h1 {
 	height: 500px;
 }
 
-.escrever {
+.meusPostsNoPerfil {
+	float: left;
+	width: 1003px;
+	margin-right: 10px; 
+}
+
+.escrever1 {
+	background-color: white;
+	border: 1px solid #ccc!important;
+	border-radius: 6px;
+	padding: 10px;
+}
+
+.caixaMensagem {
+	padding: 8px 16px!important;
+	border: 1px solid #ccc!important;
+}
+
+.caixaConversa {
+	background-color: white;
+	border: 1px solid #ccc!important;
+	border-radius: 6px;
+	padding: 100px;
+	margin-left: 336px;
+	margin-right: 10px;
+}
+
+.escrever2 {
 	background-color: white;
 	border: 1px solid #ccc!important;
 	border-radius: 6px;
@@ -64,7 +137,12 @@ h1 {
 	padding: 10px;
 }
 
-.caixaTexto {
+.caixaTexto1 {
+	padding: 8px 16px!important;
+	border: 1px solid #ccc!important;
+}
+
+.caixaTexto2 {
 	padding: 8px 16px!important;
 	border: 1px solid #ccc!important;
 }
@@ -80,10 +158,10 @@ h2 {
 
 .sugestaoAmigos {
 	width: 21%;
-	float: right;
+	float: left;
 	background-color: white;
-	margin-bottom: 20px;
-	margin-right: 6px;
+	margin-bottom: 15px;
+	margin-right: 15px;
 	margin-left: 15px;
 	border: 1px solid #ccc!important;
 	border-radius: 6px;
@@ -92,6 +170,11 @@ h2 {
 
 .sair {
 	margin-top: 30px;
+}
+
+#sair {
+	margin-left: 25px;
+	margin-bottom: 5px;
 }
 
 .container{
