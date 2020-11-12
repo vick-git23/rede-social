@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Facebook</title>
+	<title>Folhagens</title>
 	<link rel="icon" type="imge/gif" href="facebook.jpg" sizes="16x16">
 	<link rel="stylesheet" type="text/css" href="reset.css"/>
 	<link rel="stylesheet" type="text/css" href="login.css"/>
@@ -9,15 +9,20 @@
 </head>
 
 <body>
-		<h1 class="titulo-principal">Facebook</h1>
+	<div class="linha"></div>
+		<div class="titulo">
+			<h1>Folhagens</h1>
+		</div>
 
+	<div class="acesso">	
 		<div class="primeiro-acesso">
-			<div style="display: inline-block;">
+			<div class="posicao1">
+				<p class="texto1">Logar</p>
 				<p id="pAzul">Nome de Usuario:</p>
 				<input id="nomeUsuario" name="nomeUsuario" placeholder="Digite seu usuario">
 			</div>
 
-			<div style="display: inline-block;">
+			<div class="posicao2">
 				<p id="pAzul">Senha:</p>
 				<input id="senha" name="senha" placeholder="Digite sua senha">
 			</div>
@@ -25,13 +30,8 @@
 				<button id="bottom" onclick="entrar()">Entrar</button>
 		</div>
 
-	<main>
-		<div class="imagem">
-			<img src="rede social.jpg" alt="Imagem de conexao" class="imagem">
-		</div>
-
 		<div class="segundo-acesso">
-			<p class="texto1">Abra uma conta</p>
+			<p class="texto1">Cadastrar</p>
 			<p class="texto2">É rápido e fácil</p>
 
 			<div>
@@ -43,9 +43,12 @@
 			</div>
 
 			<button id="bt" onclick="cadastrarNovoUsuario()">Cadastrar</button>
-			<button id="bt" onclick="mostrarUsuario()">Mostrar usuario</button>
 		</div>
-	</main>
+	</div>
+
+		<div class="imagem">
+			<img src="rede social.jpg" alt="Imagem de conexao" class="imagem">
+		</div>
 
 	<script src="falsoBackend.js"></script>
 	<script>
@@ -125,10 +128,6 @@
                 document.getElementById("senha").value = "";
                 alert("Nome de usuario ou senha incorretas");
             }
-		}
-
-		function mostrarUsuario(){
-			console.log(usuariosAtuais())
 		}
 
 	</script>

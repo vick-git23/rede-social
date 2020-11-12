@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Facebook</title>
+	<title>Folhagens</title>
 	<link rel="icon" type="imge/gif" href="facebook.jpg" sizes="16x16">
 	<link rel="stylesheet" type="text/css" href="entrar.css">
 </head>
@@ -9,7 +9,7 @@
 <body>
 	<div class="linha"></div>
 	<div class="titulo">
-		<h1>Facebook</h1>
+		<h1>Folhagens</h1>
 		
 		<button id="sair" onclick="sair()">Sair</button>
 	</div>
@@ -22,13 +22,11 @@
 		</center>
 	</div>
 
-	<div>
-		
-	</div>
-
-		<div id="parteDoPerfil" class="visivel">
+	<abas>
+		<div id="parteDoPerfil">
 			<div>
 				<div class="informacoes">
+					<img src="../rede-social/pp.jpg" alt="Minha imagem" class="foto-perfil">
 					<p id="amigos">Amigos</p>
 					<p id="amizadeSolicitada">Solicitação de Amizade</p>
 				</div>
@@ -37,7 +35,7 @@
 			<div class="meusPostsNoPerfil">
 				<div class="escrever1">
 					<div class="texto1">
-						<label>No que você está pensando hoje?</label>
+						<label>Gostaria de compartilhar algo conosco hoje?</label>
 					</div>
 					<p contenteditable = "true" id="caixaTexto1" class="caixaTexto1"></p>
 					<button onclick="postar()">Postar</button>
@@ -73,30 +71,29 @@
 				<div id="publicacoes"></div>
 			</div>
 		</div>	
+	</abas>
 
 	<script src="falsoBackend.js"></script>
 	<script>
-		function perfil() {
-			document.getElementById("parteDasPostagens", "parteDaConversa").classList.remove("visivel");
-			document.getElementById("parteDasPostagens", "parteDaConversa").classList.add("invisivel");
-			document.getElementById("parteDoPerfil").classList.remove("invisivel");
-			document.getElementById("parteDoPerfil").classList.add("visivel");
+		function desaparece(){
+			document.getElementById("parteDoPerfil").classList.add("invisivel");
+			document.getElementById("parteDaConversa").classList.add("invisivel");
+			document.getElementById("parteDasPostagens").classList.add("invisivel");
 		}
 
-		// #49649f
+		function perfil() {
+			desaparece()
+			document.getElementById("parteDoPerfil").classList.remove("invisivel");
+		}
 
 		function conversas() {
-			document.getElementById("parteDoPerfil", "parteDasPostagens").classList.remove("visivel");
-			document.getElementById("parteDoPerfil", "parteDasPostagens").classList.add("invisivel");
+			desaparece()
 			document.getElementById("parteDaConversa").classList.remove("invisivel");
-			document.getElementById("parteDaConversa").classList.add("visivel");
 		}
 
 		function postagens() {
-			document.getElementById("parteDoPerfil", "parteDaConversa").classList.remove("visivel");
-			document.getElementById("parteDoPerfil", "parteDaConversa").classList.add("invisivel");
+			desaparece()
 			document.getElementById("parteDasPostagens").classList.remove("invisivel");
-			document.getElementById("parteDasPostagens").classList.add("visivel");
 		}
 
 		function postar() {
