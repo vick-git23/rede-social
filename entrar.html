@@ -17,8 +17,8 @@
 	<div>
 		<center>
 			<button id="aba1" onclick="perfil()">Perfil</button>
-			<button id="aba2" onclick="conversas()">Conversas</button>
-			<button id="aba3" onclick="postagens()">Postagens</button>
+			<button id="aba2" class="botaoVerde" onclick="conversas()">Conversas</button>
+			<button id="aba3" class="botaoVerde" onclick="postagens()">Postagens</button>
 		</center>
 	</div>
 
@@ -38,7 +38,7 @@
 						<label>Gostaria de compartilhar algo conosco hoje?</label>
 					</div>
 					<p contenteditable = "true" id="caixaTexto1" class="caixaTexto1"></p>
-					<button onclick="postar()">Postar</button>
+					<button class="botaoPostar" onclick="postar()">Postar</button>
 				</div>
 				<div id="publicacoes"></div>
 			</div>
@@ -63,10 +63,10 @@
 			<div class="centro">
 				<div class="escrever2">
 					<div class="texto2">
-						<label>No que você está pensando hoje?</label>
+						<label>Gostaria de compartilhar algo conosco hoje?</label>
 					</div>
 					<p contenteditable = "true" id="caixaTexto2" class="caixaTexto2"></p>
-					<button onclick="postar()">Postar</button>
+					<button class="botaoPostar" onclick="postar()">Postar</button>
 				</div>
 				<div id="publicacoes"></div>
 			</div>
@@ -81,19 +81,34 @@
 			document.getElementById("parteDasPostagens").classList.add("invisivel");
 		}
 
+		function apareceBotaoVerde(){
+			document.getElementById("parteDoPerfil").classList.add("botaoVerde");
+			document.getElementById("parteDaConversa").classList.add("botaoVerde");
+			document.getElementById("parteDasPostagens").classList.add("botaoVerde");
+		}
+
 		function perfil() {
 			desaparece()
 			document.getElementById("parteDoPerfil").classList.remove("invisivel");
+
+			apareceBotaoVerde()
+			document.getElementById("parteDoPerfil").classList.remove("botaoVerde");
 		}
 
 		function conversas() {
 			desaparece()
 			document.getElementById("parteDaConversa").classList.remove("invisivel");
+
+			apareceBotaoVerde()
+			document.getElementById("parteDaConversa").classList.remove("botaoVerde");
 		}
 
 		function postagens() {
 			desaparece()
 			document.getElementById("parteDasPostagens").classList.remove("invisivel");
+
+			apareceBotaoVerde()
+			document.getElementById("parteDasPostagens").classList.remove("botaoVerde");
 		}
 
 		function postar() {

@@ -72,6 +72,10 @@ h1 {
 	display: none;
 }
 
+.botaoVerde {
+	background-color: #69a74e;
+}
+
 .centro {
 	float: left;
 	width: 1003px;
@@ -145,6 +149,15 @@ h1 {
 	padding: 10px;
 }
 
+.botaoPostar {
+	width: 80px;
+	background-color: #4c76a79c;
+	color: white;
+	font-size: 19px;
+	border-radius: 20px;
+	border: 1px solid #797979!important;
+}
+
 .caixaTexto1 {
 	padding: 8px 16px!important;
 	border: 1px solid #ccc!important;
@@ -182,7 +195,14 @@ h2 {
 
 #sair {
 	margin-left: 25px;
-	margin-bottom: 5px;
+	width: 60px;
+	height: 30px;
+	background-color: #69a74e;
+	color: white;
+	font-size: 19px;
+	border-radius: 20px;
+	border: 1px solid;
+	border-color: #3b6e22 #3b5e22 #2c5115;
 }
 
 .container{
