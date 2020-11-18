@@ -3,6 +3,7 @@
 <head>
 	<title>Folhagens</title>
 	<link rel="icon" type="imge/gif" href="facebook.jpg" sizes="16x16">
+	<link rel="stylesheet" type="text/css" href="reset.css"/>
 	<link rel="stylesheet" type="text/css" href="entrar.css">
 </head>
 
@@ -56,7 +57,7 @@
 			<div>
 				<div class="sugestaoAmigos">
 					<h2><center>Sugestão de Amigos</center></h2>
-					<div id="usuarioAdicionado"></div>
+					<div id="usuarioAdicionado" class="osAmigos"></div>
 				</div>
 			</div>
 
@@ -82,9 +83,9 @@
 		}
 
 		function apareceBotaoVerde(){
-			document.getElementById("parteDoPerfil").classList.add("botaoVerde");
-			document.getElementById("parteDaConversa").classList.add("botaoVerde");
-			document.getElementById("parteDasPostagens").classList.add("botaoVerde");
+			document.getElementById("aba1").classList.add("botaoVerde");
+			document.getElementById("aba2").classList.add("botaoVerde");
+			document.getElementById("aba3").classList.add("botaoVerde");
 		}
 
 		function perfil() {
@@ -92,7 +93,9 @@
 			document.getElementById("parteDoPerfil").classList.remove("invisivel");
 
 			apareceBotaoVerde()
-			document.getElementById("parteDoPerfil").classList.remove("botaoVerde");
+			document.getElementById("aba1").classList.remove("botaoVerde");
+			//document.getElementById("parteDoPerfil").classList.add("botaoBranco");
+
 		}
 
 		function conversas() {
@@ -100,7 +103,8 @@
 			document.getElementById("parteDaConversa").classList.remove("invisivel");
 
 			apareceBotaoVerde()
-			document.getElementById("parteDaConversa").classList.remove("botaoVerde");
+			document.getElementById("aba2").classList.remove("botaoVerde");
+			//document.getElementById("parteDaConversa").classList.add("botaoBranco");
 		}
 
 		function postagens() {
@@ -108,7 +112,8 @@
 			document.getElementById("parteDasPostagens").classList.remove("invisivel");
 
 			apareceBotaoVerde()
-			document.getElementById("parteDasPostagens").classList.remove("botaoVerde");
+			document.getElementById("aba3").classList.remove("botaoVerde");			
+			//document.getElementById("parteDasPostagens").classList.add("botaoBranco");
 		}
 
 		function postar() {

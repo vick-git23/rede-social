@@ -37,9 +37,16 @@ h1 {
 	font-size: 60px;
 	color: #8670a2;
 	margin-left: 180%;
-	margin-top: -2px;
-	margin-bottom: -10px;
+	margin-top: 3px;
 	text-shadow: white 1px 1px;
+}
+
+p {
+	display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
 }
 
 #aba1{
@@ -73,7 +80,11 @@ h1 {
 }
 
 .botaoVerde {
-	background-color: #69a74e;
+	background-color: #69a74e !important;
+}
+
+.botaoBranco {
+	background-color: white !important;
 }
 
 .centro {
@@ -173,8 +184,7 @@ h1 {
 }
 
 h2 {
-	margin: 0px;
-	margin-right: 20px;
+	font-size: 25px;
 }
 
 .sugestaoAmigos {
