@@ -44,10 +44,10 @@ function criarUsuario(novoUsuario){
 }
 
 function retornaTodosOsPosts(){
-    return JSON.parse(localStorage.getItem("publicacoes"))
+    return JSON.parse(localStorage.getItem("publicacoesDeTodos"))
     }
 
-function joice(todosOsPosts){
-    return localStorage.setItem("publicacoes", JSON.stringify(todosOsPosts))
+function bancoPosts(todosOsPosts){
+    return localStorage.setItem("publicacoesDeTodos", JSON.stringify(todosOsPosts))
 }
 

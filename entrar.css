@@ -4,14 +4,7 @@ body {
 	background-color: #e6e6ff;
 }
 
-.texto1 {
-	margin-top: 5px;
-	margin-right: 5px;
-	margin-left: 5px;
-	margin-bottom: 5px;
-}
-
-.texto2 {
+.texto {
 	margin-top: 5px;
 	margin-right: 5px;
 	margin-left: 5px;
@@ -23,9 +16,9 @@ body {
 	float: left;
 	background-color: #49559f6e;
 	width: 100%;
-	margin-bottom: 30px;
+	margin-bottom: 3%;
 	height: 15px;
-	margin-top: 30px;
+	margin-top: 2%;
 	z-index: 0;
 }
 
@@ -36,9 +29,10 @@ body {
 h1 {
 	font-size: 60px;
 	color: #8670a2;
-	margin-left: 180%;
-	margin-top: 3px;
+	margin-left: 176%;
+	margin-top: 0%;
 	text-shadow: white 1px 1px;
+	width: 100%
 }
 
 p {
@@ -89,20 +83,20 @@ p {
 
 .centro {
 	float: left;
-	width: 1003px;
-	margin-right: 10px; 
+	width: 60%;
+	margin-right: 8%; 
 }
 
 .informacoes {
 	float: left;
 	background-color: white;
-	margin-bottom: 15px;
-	margin-right: 15px;
-	margin-left: 15px;
+	margin-bottom: 0%;
+	margin-right: 1%;
+	margin-left: 8%;
 	border: 1px solid #ccc!important;
-	width: 21%;
-	border-radius: 6px;
-	padding: 10px;
+	width: 20%;
+	border-radius: 1%;
+	padding: 1%;
 	height: 500px;
 }
 
@@ -117,15 +111,28 @@ p {
 
 .meusPostsNoPerfil {
 	float: left;
-	width: 1003px;
-	margin-right: 10px; 
+	width: 60%;
 }
 
-.escrever1 {
+.escrever {
 	background-color: white;
 	border: 1px solid #ccc!important;
-	border-radius: 6px;
-	padding: 10px;
+	border-radius: 1%;
+	padding: 2%;
+}
+
+.meusAmigos {
+	width: 20%;
+	float: left;
+	background-color: white;
+	margin-bottom: 0%;
+	margin-right: 1%;
+	margin-left: 8%;
+	border: 1px solid #ccc!important;
+	border-radius: 1%;
+	padding: 1%;
+	left: 145;
+	height: 450px;
 }
 
 .caixaMensagem {
@@ -136,28 +143,22 @@ p {
 .caixaConversa {
 	background-color: white;
 	border: 1px solid #ccc!important;
-	border-radius: 6px;
-	padding: 100px;
-	margin-left: 336px;
-	margin-right: 10px;
-}
-
-.escrever2 {
-	background-color: white;
-	border: 1px solid #ccc!important;
-	border-radius: 6px;
-	padding: 10px;
+	border-radius: 1%;
+	padding: 1%;
+	margin-left: 0%;
+	margin-right: 8%;
+	float: left;
+	width: 58%
 }
 
 .postagem {
-	width: 673px;
 	background-color: white;
-	margin-top: 15px;
-	margin-bottom: 15px;
+	margin-top: 2%;
+	margin-bottom: 2%;
 	border: 1px solid #ccc!important;
 	position: relative;
-	border-radius: 6px;
-	padding: 10px;
+	border-radius: 1%;
+	padding: 1%;
 }
 
 .botaoPostar {
@@ -169,12 +170,7 @@ p {
 	border: 1px solid #797979!important;
 }
 
-.caixaTexto1 {
-	padding: 8px 16px!important;
-	border: 1px solid #ccc!important;
-}
-
-.caixaTexto2 {
+.caixaTexto {
 	padding: 8px 16px!important;
 	border: 1px solid #ccc!important;
 }
@@ -188,15 +184,15 @@ h2 {
 }
 
 .sugestaoAmigos {
-	width: 21%;
+	width: 20%;
 	float: left;
 	background-color: white;
-	margin-bottom: 15px;
-	margin-right: 15px;
-	margin-left: 15px;
+	margin-bottom: 0%;
+	margin-right: 1%;
+	margin-left: 8%;
 	border: 1px solid #ccc!important;
-	border-radius: 6px;
-	padding: 10px;
+	border-radius: 1%;
+	padding: 1%;
 }
 
 .sair {

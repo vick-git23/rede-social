@@ -34,18 +34,15 @@
 			</div>
 
 			<div class="meusPostsNoPerfil">
-				<div class="escrever1">
-					<div class="texto1">
-						<label>Gostaria de compartilhar algo conosco hoje?</label>
-					</div>
-					<p contenteditable = "true" id="caixaTexto1" class="caixaTexto1"></p>
-					<button class="botaoPostar" onclick="postar()">Postar</button>
-				</div>
-				<div id="publicacoes"></div>
+				<div id="publicacoesDoUsuarioLogado"></div>
 			</div>
 		</div>
 
 		<div id="parteDaConversa" class="invisivel">
+			<div class="meusAmigos">
+				<h3>oi</h1>
+			</div>
+
 			<div class="caixaConversa">
 				<div>
 					<p contenteditable = "true" id="caixaMensagem" class="caixaMensagem"></p>
@@ -62,14 +59,14 @@
 			</div>
 
 			<div class="centro">
-				<div class="escrever2">
-					<div class="texto2">
+				<div class="escrever">
+					<div class="texto">
 						<label>Gostaria de compartilhar algo conosco hoje?</label>
 					</div>
-					<p contenteditable = "true" id="caixaTexto2" class="caixaTexto2"></p>
+					<p contenteditable = "true" id="caixaTexto" class="caixaTexto"></p>
 					<button class="botaoPostar" onclick="postar()">Postar</button>
 				</div>
-				<div id="publicacoes"></div>
+				<div id="publicacoesDeTodos"></div>
 			</div>
 		</div>	
 	</abas>
@@ -96,6 +93,7 @@
 			document.getElementById("aba1").classList.remove("botaoVerde");
 			//document.getElementById("parteDoPerfil").classList.add("botaoBranco");
 
+			postsDoUsuarioLogado()
 		}
 
 		function conversas() {
@@ -117,7 +115,7 @@
 		}
 
 		function postar() {
-			let posts = document.getElementById("caixaTexto1", "caixaTexto2").innerHTML
+			let posts = document.getElementById("caixaTexto").innerHTML
 			console.log(posts)
 
 			// verificar se caixaTexto1 e 2 nao é vazio
@@ -128,19 +126,20 @@
 				return;
 			}
 
-			let publicacoes = document.getElementById("publicacoes")
+			let publicacoesDeTodos = document.getElementById("publicacoesDeTodos")
 
 			// criar paragrafo que aparece nome do usuario
 			let nomeUsuario = retornaUsuarioLogado();
 
 			//publicacoes.appendChild(nomeUsuario);
-			publicacoes.innerHTML = `<div class="postagem"><p>${nomeUsuario}</p>${posts}</div>`+publicacoes.innerHTML;
-			console.log(publicacoes)
+			publicacoesDeTodos.innerHTML = `<div class="postagem"><p>${nomeUsuario}</p>${posts}</div>`+publicacoesDeTodos.innerHTML;
+			console.log(publicacoesDeTodos)
 
-			let meuPost = {
+			let meuPost ={
 				nomeUsuario: nomeUsuario,
 				postagem: posts
 			}
+
 
 			let todosOsPosts = retornaTodosOsPosts();
 				if (!todosOsPosts) {
@@ -149,8 +148,21 @@
 
 				todosOsPosts.push(meuPost);
 				todosOsPosts.reverse();
-				joice(todosOsPosts);
+				bancoPosts(todosOsPosts);
 			}
+
+		function  postsDoUsuarioLogado(){
+			let publicacoesDoUsuarioLogado = document.getElementById("publicacoesDoUsuarioLogado")
+			let todosOsPosts = retornaTodosOsPosts();
+			let usuarioLogado = retornaUsuarioLogado();
+			console.log(usuarioLogado)
+
+			for (let i = 0; i < todosOsPosts.length; i ++) {
+				if (usuarioLogado === todosOsPosts[i].nomeUsuario) {
+					publicacoesDoUsuarioLogado.innerHTML+=`<div class="postagem"></p>${todosOsPosts[i].postagem}</div>`+publicacoesDeTodos.innerHTML;
+				}
+			}
+		}
 
 		function carregarSugestaoAmigos() {
 			let container = document.getElementById("usuarioAdicionado")
