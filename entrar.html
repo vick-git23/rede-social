@@ -93,6 +93,9 @@
 			document.getElementById("aba1").classList.remove("botaoVerde");
 			//document.getElementById("parteDoPerfil").classList.add("botaoBranco");
 
+			let publicacoesDoUsuarioLogado = document.getElementById("publicacoesDoUsuarioLogado")
+			publicacoesDoUsuarioLogado.innerHTML = ""
+
 			postsDoUsuarioLogado()
 		}
 
@@ -116,7 +119,6 @@
 
 		function postar() {
 			let posts = document.getElementById("caixaTexto").innerHTML
-			console.log(posts)
 
 			// verificar se caixaTexto1 e 2 nao é vazio
 			if (posts === "") {
@@ -140,14 +142,12 @@
 				postagem: posts
 			}
 
-
 			let todosOsPosts = retornaTodosOsPosts();
 				if (!todosOsPosts) {
 					todosOsPosts = []
 				}
 
 				todosOsPosts.push(meuPost);
-				todosOsPosts.reverse();
 				bancoPosts(todosOsPosts);
 			}
 
@@ -156,12 +156,17 @@
 			let todosOsPosts = retornaTodosOsPosts();
 			let usuarioLogado = retornaUsuarioLogado();
 			console.log(usuarioLogado)
+			console.log(todosOsPosts)
+
+			publicacoesDoUsuarioLogado.innerHTML = ""
+			todosOsPosts.reverse();
 
 			for (let i = 0; i < todosOsPosts.length; i ++) {
 				if (usuarioLogado === todosOsPosts[i].nomeUsuario) {
 					publicacoesDoUsuarioLogado.innerHTML+=`<div class="postagem"></p>${todosOsPosts[i].postagem}</div>`+publicacoesDeTodos.innerHTML;
 				}
 			}
+			todosOsPosts.reverse()
 		}
 
 		function carregarSugestaoAmigos() {
@@ -181,7 +186,6 @@
 
                 container.appendChild(nomeUsuario);
                 container.appendChild(botaoAdicionar);
-                
             }
 		}
 
@@ -193,6 +197,7 @@
 			window.location.href = "login.html"; 
 		}
 
+		perfil();
 		carregarSugestaoAmigos();
 	</script>
 </body>
