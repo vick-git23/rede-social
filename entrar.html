@@ -44,7 +44,7 @@
 			</div>
 
 			<div class="caixaConversa">
-				<div>
+				<div class="estiloCaixaMensagem">
 					<p contenteditable = "true" id="caixaMensagem" class="caixaMensagem"></p>
 				</div>
 			</div>
@@ -130,11 +130,15 @@
 
 			let publicacoesDeTodos = document.getElementById("publicacoesDeTodos")
 
+			let todosOsPosts = retornaTodosOsPosts();
+
 			// criar paragrafo que aparece nome do usuario
 			let nomeUsuario = retornaUsuarioLogado();
 
-			//publicacoes.appendChild(nomeUsuario);
-			publicacoesDeTodos.innerHTML = `<div class="postagem"><p>${nomeUsuario}</p>${posts}</div>`+publicacoesDeTodos.innerHTML;
+			for (let i = 0; i < todosOsPosts.length; i ++) {
+				//publicacoes.appendChild(nomeUsuario);
+				publicacoesDeTodos.innerHTML = `<div class="postagem"><p>${nomeUsuario}</p>${posts}</div>`+publicacoesDeTodos.innerHTML;
+			}
 			console.log(publicacoesDeTodos)
 
 			let meuPost ={
@@ -142,10 +146,9 @@
 				postagem: posts
 			}
 
-			let todosOsPosts = retornaTodosOsPosts();
-				if (!todosOsPosts) {
-					todosOsPosts = []
-				}
+			if (!todosOsPosts) {
+				todosOsPosts = []
+			}
 
 				todosOsPosts.push(meuPost);
 				bancoPosts(todosOsPosts);
@@ -163,7 +166,7 @@
 
 			for (let i = 0; i < todosOsPosts.length; i ++) {
 				if (usuarioLogado === todosOsPosts[i].nomeUsuario) {
-					publicacoesDoUsuarioLogado.innerHTML+=`<div class="postagem"></p>${todosOsPosts[i].postagem}</div>`+publicacoesDeTodos.innerHTML;
+					publicacoesDoUsuarioLogado.innerHTML+=`<div class="postagem"></p>${todosOsPosts[i].postagem}</div>`;
 				}
 			}
 			todosOsPosts.reverse()
