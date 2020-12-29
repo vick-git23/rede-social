@@ -186,6 +186,11 @@ p {
 	border: 1px solid #797979!important;
 }
 
+.localPublicaçoes {
+	overflow: auto;
+	height: 330px;
+}
+
 .botaoEnviar {
 	width: 80px;
 	background-color: #4c76a79c;
@@ -219,6 +224,8 @@ h4 {
 	border: 1px solid #ccc!important;
 	border-radius: 1%;
 	padding: 1%;
+	overflow: auto;
+    height: 450px;
 }
 
 .sair {

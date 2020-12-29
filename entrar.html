@@ -68,7 +68,7 @@
 					<p contenteditable = "true" id="caixaTexto" class="caixaTexto"></p>
 					<button class="botaoPostar" onclick="postar()">Postar</button>
 				</div>
-				<div id="publicacoesDeTodos"></div>
+				<div id="publicacoesDeTodos" class="localPublicaçoes"></div>
 			</div>
 		</div>	
 	</abas>
@@ -193,6 +193,7 @@
 
 		function carregarSugestaoAmigos() {
 			let container = document.getElementById("usuarioAdicionado")
+			console.log(container)
             let usuariosAmigos = usuariosAtuais();
 
             for(let i=0; i<usuariosAmigos.length; i++){
