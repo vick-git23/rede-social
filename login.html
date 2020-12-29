@@ -85,15 +85,14 @@
 			}
 
 			// criar novo objecto do novo usuario
-
 			const novoUsuario = {id: pegaNovoId(), nomeUsuario: nomeUsuario, senha: senha};
             
             if(criarUsuario(novoUsuario)){
-                document.getElementById("email").value = "";
-                document.getElementById("cadastrarSenha").value = "";
+                document.getElementById("nomeUsuario").value = "";
+                document.getElementById("senha").value = "";
                 alert("Novo usuario criado");    
             }else{
-                alert("ocorreu um erro na criação do usuario !");    
+                alert("ocorreu um erro na criação do usuario!");    
             }
 		}
 

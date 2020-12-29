@@ -27,8 +27,9 @@
 		<div id="parteDoPerfil">
 			<div>
 				<div class="informacoes">
-					<img src="../rede-social/pp.jpg" alt="Minha imagem" class="foto-perfil">
-					<p id="amigos">Amigos</p>
+					<img src="../rede-social/fotoPerfil1.jpg" alt="Minha imagem" class="foto-perfil">
+					<h2 id="nomeDoUsuario"></h2>
+					<button id="amigos" onclick="amigos" class="botaoAmigos">Amigos</button>
 					<p id="amizadeSolicitada">Solicitação de Amizade</p>
 				</div>
 			</div>
@@ -40,12 +41,13 @@
 
 		<div id="parteDaConversa" class="invisivel">
 			<div class="meusAmigos">
-				<h3>oi</h1>
+				<h3>oi</h3>
 			</div>
 
 			<div class="caixaConversa">
 				<div class="estiloCaixaMensagem">
 					<p contenteditable = "true" id="caixaMensagem" class="caixaMensagem"></p>
+					<button class="botaoEnviar" onclick="enviar">Enviar</button>
 				</div>
 			</div>
 		</div>
@@ -53,8 +55,8 @@
 		<div id="parteDasPostagens" class="invisivel">
 			<div>
 				<div class="sugestaoAmigos">
-					<h2><center>Sugestão de Amigos</center></h2>
-					<div id="usuarioAdicionado" class="osAmigos"></div>
+					<h4><center>Sugestão de Amigos</center></h4>
+					<div id="usuarioAdicionado"></div>
 				</div>
 			</div>
 
@@ -91,7 +93,6 @@
 
 			apareceBotaoVerde()
 			document.getElementById("aba1").classList.remove("botaoVerde");
-			//document.getElementById("parteDoPerfil").classList.add("botaoBranco");
 
 			let publicacoesDoUsuarioLogado = document.getElementById("publicacoesDoUsuarioLogado")
 			publicacoesDoUsuarioLogado.innerHTML = ""
@@ -105,7 +106,6 @@
 
 			apareceBotaoVerde()
 			document.getElementById("aba2").classList.remove("botaoVerde");
-			//document.getElementById("parteDaConversa").classList.add("botaoBranco");
 		}
 
 		function postagens() {
@@ -114,7 +114,30 @@
 
 			apareceBotaoVerde()
 			document.getElementById("aba3").classList.remove("botaoVerde");			
-			//document.getElementById("parteDasPostagens").classList.add("botaoBranco");
+		}
+		
+		function nomeDoUsuario() {
+			//let usuarioLogadoNoPerfil = retornaUsuarioLogado();
+				//publicacoes.appendChild(nomeUsuario);
+				//usuarioLogadoNoPerfil.innerHTML = `<div class="o"><p>${nomeUsuario}`;
+			let retornaUsuarioLogado = document.createElement("p");
+
+			console.log(retornaUsuarioLogado)
+
+		}
+
+		function carregaPostagens() {
+			let publicacoesDeTodos = document.getElementById("publicacoesDeTodos")
+
+			let todosOsPosts = retornaTodosOsPosts();
+			todosOsPosts.reverse();
+
+			// criar paragrafo que aparece nome do usuario
+			publicacoesDeTodos.innerHTML = ""
+
+			for (let i = 0; i < todosOsPosts.length; i ++) {
+				publicacoesDeTodos.innerHTML += `<div class="postagem"><p>${todosOsPosts[i].nomeUsuario}</p>${todosOsPosts[i].postagem}</div>`
+			}
 		}
 
 		function postar() {
@@ -134,12 +157,7 @@
 
 			// criar paragrafo que aparece nome do usuario
 			let nomeUsuario = retornaUsuarioLogado();
-
-			for (let i = 0; i < todosOsPosts.length; i ++) {
-				//publicacoes.appendChild(nomeUsuario);
-				publicacoesDeTodos.innerHTML = `<div class="postagem"><p>${nomeUsuario}</p>${posts}</div>`+publicacoesDeTodos.innerHTML;
-			}
-			console.log(publicacoesDeTodos)
+				publicacoesDeTodos.innerHTML 	= `<div class="postagem"><p>${nomeUsuario}</p>${posts}</div>`+publicacoesDeTodos.innerHTML;
 
 			let meuPost ={
 				nomeUsuario: nomeUsuario,
@@ -150,9 +168,11 @@
 				todosOsPosts = []
 			}
 
-				todosOsPosts.push(meuPost);
-				bancoPosts(todosOsPosts);
-			}
+			todosOsPosts.push(meuPost);
+			bancoPosts(todosOsPosts);
+
+			//document.getElementById("posts").value = "";
+		}
 
 		function  postsDoUsuarioLogado(){
 			let publicacoesDoUsuarioLogado = document.getElementById("publicacoesDoUsuarioLogado")
@@ -176,14 +196,12 @@
             let usuariosAmigos = usuariosAtuais();
 
             for(let i=0; i<usuariosAmigos.length; i++){
-
-                console.log("opa")
                 //cria paragrafo que aparece nome do usuario
                 let nomeUsuario = document.createElement("p");
                 nomeUsuario.innerHTML = usuariosAmigos[i].nomeUsuario;
 
                 let botaoAdicionar = document.createElement("button");
-                botaoAdicionar.innerHTML = "Adicionar Amigo"
+                botaoAdicionar.innerHTML = "Adicionar"
                 botaoAdicionar.setAttribute("onclick",`usuarioAdicionado(${usuariosAmigos[i].id})`)
 
                 container.appendChild(nomeUsuario);
@@ -201,6 +219,7 @@
 
 		perfil();
 		carregarSugestaoAmigos();
+		carregaPostagens();
 	</script>
 </body>
 </html>

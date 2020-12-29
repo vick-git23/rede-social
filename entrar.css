@@ -97,15 +97,26 @@ p {
 	width: 20%;
 	border-radius: 1%;
 	padding: 1%;
-	height: 500px;
+	height: 450px;
 }
 
 .foto-perfil {
-	width: 97%;
+	width: 79%;
 	border-radius: 50%;
 	border: 1px solid #ccc!important;
-	margin-left: 1%;
-    float: left;
+	margin-left: 10%;
+}
+
+.botaoAmigos {
+	background-color: white;
+    border: 1px solid #ccc!important;
+    width: 100%;
+    border-radius: 1%;
+    padding: 1%;
+    height: 36px;
+    font-size: 110%;
+    background-color: #69a74e !important;
+    color: white;
 }
 
 .meusPostsNoPerfil {
@@ -141,6 +152,7 @@ p {
 	padding: 8px 16px!important;
 	border: 1px solid #ccc!important;
 	margin-right: 10%;
+	border-radius: 16px;
 }
 
 .caixaConversa {
@@ -161,7 +173,7 @@ p {
 	margin-bottom: 2%;
 	border: 1px solid #ccc!important;
 	position: relative;
-	border-radius: 1%;
+	border-radius: 9px;
 	padding: 1%;
 }
 
@@ -174,16 +186,26 @@ p {
 	border: 1px solid #797979!important;
 }
 
+.botaoEnviar {
+	width: 80px;
+	background-color: #4c76a79c;
+	color: white;
+	font-size: 19px;
+	border-radius: 20px;
+	border: 1px solid #797979!important;
+}
+
 .caixaTexto {
 	padding: 8px 16px!important;
 	border: 1px solid #ccc!important;
+	border-radius: 16px;
 }
 
 .postar {
 	margin-left: 5px;
 }
 
-h2 {
+h4 {
 	font-size: 25px;
 }
 
