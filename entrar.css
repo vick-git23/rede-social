@@ -37,7 +37,7 @@ h1 {
 
 p {
 	display: block;
-    margin-block-start: 1em;
+	margin-block-start: 1em;
     margin-block-end: 1em;
     margin-inline-start: 0px;
     margin-inline-end: 0px;
@@ -47,16 +47,16 @@ p {
 	background-color: white;
 	border: 1px solid #ccc!important;
 	border-radius: 40px 40px 0px 0px;
-	width: 200px;
-	height: 50px;
+	width: 130px;
+	height: 40px;
 }
 
 #aba2 {
 	background-color: white;
 	border: 1px solid #ccc!important;
 	border-radius: 40px 40px 0px 0px;
-	width: 200px;
-	height: 50px;
+	width: 130px;
+	height: 40px;
 	margin-left: 10px;
 	margin-right: 10px;
 }
@@ -65,8 +65,8 @@ p {
 	background-color: white;
 	border: 1px solid #ccc!important;
 	border-radius: 40px 40px 0px 0px;
-	width: 200px;
-	height: 50px;
+	width: 130px;
+	height: 40px;
 }
 
 .invisivel {
@@ -111,7 +111,7 @@ p {
 	background-color: white;
     border: 1px solid #ccc!important;
     width: 100%;
-    border-radius: 1%;
+    border-radius: 36px 36px 0px 0px;
     padding: 1%;
     height: 36px;
     font-size: 110%;
@@ -119,16 +119,39 @@ p {
     color: white;
 }
 
-.meusPostsNoPerfil {
+.botaoEditar {
+	background-color: white;
+    border: 1px solid #ccc!important;
+    width: 100%;
+    border-radius: 0px 0px 36px 36px;
+    padding: 1%;
+    height: 36px;
+    font-size: 110%;
+    background-color: #69a74e !important;
+    color: white;
+}
+
+.caixaDosMeusPosts {
+	border: 1px solid #ccc!important;
+	border-radius: 1%;
 	float: left;
 	width: 60%;
+	background-color: white;
+	overflow: auto;
+	height: 478px;
+
+}
+
+.meusPostsNoPerfil {
+	margin-left: 3%;
+	margin-right: 3%;
 }
 
 .escrever {
 	background-color: white;
 	border: 1px solid #ccc!important;
 	border-radius: 1%;
-	padding: 2%;
+	padding: 1%;
 }
 
 .meusAmigos {
@@ -168,9 +191,9 @@ p {
 }
 
 .postagem {
-	background-color: white;
-	margin-top: 2%;
-	margin-bottom: 2%;
+	background-color: #e6e6ff;
+	margin-top: 1%;
+	margin-bottom: 1%;
 	border: 1px solid #ccc!important;
 	position: relative;
 	border-radius: 9px;
@@ -178,17 +201,20 @@ p {
 }
 
 .botaoPostar {
-	width: 80px;
+	height: 34px;
+	width: 70px;
 	background-color: #4c76a79c;
 	color: white;
 	font-size: 19px;
 	border-radius: 20px;
 	border: 1px solid #797979!important;
+	margin-left: 1%;
+	margin-top: 1%;
 }
 
 .localPublicaçoes {
 	overflow: auto;
-	height: 330px;
+	height: 392px;
 }
 
 .botaoEnviar {
@@ -204,6 +230,10 @@ p {
 	padding: 8px 16px!important;
 	border: 1px solid #ccc!important;
 	border-radius: 16px;
+	margin-top: 1%;
+	margin-bottom: 1%;
+	width: 85%;
+	float: left;
 }
 
 .postar {
