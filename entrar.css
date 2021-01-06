@@ -4,13 +4,6 @@ body {
 	background-color: #e6e6ff;
 }
 
-.texto {
-	margin-top: 5px;
-	margin-right: 5px;
-	margin-left: 5px;
-	margin-bottom: 5px;
-}
-
 .linha {
 	display: inline;
 	float: left;
@@ -47,26 +40,29 @@ p {
 	background-color: white;
 	border: 1px solid #ccc!important;
 	border-radius: 40px 40px 0px 0px;
-	width: 130px;
+	width: 160px;
 	height: 40px;
+	font-size: larger;
 }
 
 #aba2 {
 	background-color: white;
 	border: 1px solid #ccc!important;
 	border-radius: 40px 40px 0px 0px;
-	width: 130px;
+	width: 160px;
 	height: 40px;
 	margin-left: 10px;
 	margin-right: 10px;
+	font-size: larger;
 }
 
 #aba3 {
 	background-color: white;
 	border: 1px solid #ccc!important;
 	border-radius: 40px 40px 0px 0px;
-	width: 130px;
+	width: 160px;
 	height: 40px;
+	font-size: larger;
 }
 
 .invisivel {
@@ -97,7 +93,7 @@ p {
 	width: 20%;
 	border-radius: 1%;
 	padding: 1%;
-	height: 450px;
+	height: 500px;
 }
 
 .foto-perfil {
@@ -132,14 +128,19 @@ p {
 }
 
 .caixaDosMeusPosts {
-	border: 1px solid #ccc!important;
-	border-radius: 1%;
 	float: left;
 	width: 60%;
-	background-color: white;
 	overflow: auto;
-	height: 478px;
+	height: 527px;
 
+}
+
+.caixaLocalPublicacoes {
+	float: left;
+	width: 100%;
+	overflow: auto;
+	height: 432px;
+	margin-top: 1%;
 }
 
 .meusPostsNoPerfil {
@@ -152,6 +153,7 @@ p {
 	border: 1px solid #ccc!important;
 	border-radius: 1%;
 	padding: 1%;
+	height: 68px;
 }
 
 .meusAmigos {
@@ -164,34 +166,49 @@ p {
 	border: 1px solid #ccc!important;
 	border-radius: 1%;
 	padding: 1%;
-	height: 450px;
+	height: 500px;
 }
 
 .estiloCaixaMensagem {
-	margin-top: 53%;
+	height: 68px;
+    background-color: white;
+    border: 1px solid #ccc!important;
+    border-radius: 0px 0px 6px 6px;
+    padding-top: 1%;
+    padding-left: 1%;
+    padding-right: 1%;
+    padding-bottom: 1%;
+    margin-left: 0%;
+    margin-right: 8%;
+    float: left;
+    width: 58%;
 }
 
 .caixaMensagem {
-	padding: 8px 16px!important;
-	border: 1px solid #ccc!important;
-	margin-right: 10%;
-	border-radius: 16px;
+	float: left;
+    padding: 9px 16px!important;
+    border: 1px solid #ccc!important;
+    margin-top: 0%;
+    border-radius: 16px;
+    width: 84%;
+    height: 71%;
+    overflow: auto;
 }
 
 .caixaConversa {
 	background-color: white;
 	border: 1px solid #ccc!important;
-	border-radius: 1%;
+	border-radius: 1% 1% 0% 0%;
 	padding: 1%;
 	margin-left: 0%;
 	margin-right: 8%;
 	float: left;
 	width: 58%;
-	height: 450px;
+	height: 403px;
 }
 
 .postagem {
-	background-color: #e6e6ff;
+	background-color: white;
 	margin-top: 1%;
 	margin-bottom: 1%;
 	border: 1px solid #ccc!important;
@@ -209,31 +226,37 @@ p {
 	border-radius: 20px;
 	border: 1px solid #797979!important;
 	margin-left: 1%;
-	margin-top: 1%;
+	margin-top: 3%;
 }
 
-.localPublicaçoes {
-	overflow: auto;
-	height: 392px;
+.localPublicacoes {
+	margin-left: 3%;
+    margin-right: 3%;
 }
 
 .botaoEnviar {
 	width: 80px;
+	height: 34px;
 	background-color: #4c76a79c;
 	color: white;
 	font-size: 19px;
 	border-radius: 20px;
 	border: 1px solid #797979!important;
+	margin-left: 1%;
+	margin-top: 3%;
 }
 
 .caixaTexto {
 	padding: 8px 16px!important;
 	border: 1px solid #ccc!important;
 	border-radius: 16px;
-	margin-top: 1%;
-	margin-bottom: 1%;
-	width: 85%;
+	margin-top: 0%;
+	margin-bottom: 0%;
+	width: 80%;
 	float: left;
+	margin-left: 3%;
+	overflow: auto;
+	height: 74%;
 }
 
 .postar {
@@ -255,7 +278,7 @@ h4 {
 	border-radius: 1%;
 	padding: 1%;
 	overflow: auto;
-    height: 450px;
+    height: 500px;
 }
 
 .sair {

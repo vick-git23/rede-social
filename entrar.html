@@ -44,11 +44,10 @@
 				<h3>oi</h3>
 			</div>
 
-			<div class="caixaConversa">
-				<div class="estiloCaixaMensagem">
-					<p contenteditable = "true" id="caixaMensagem" class="caixaMensagem"></p>
-					<button class="botaoEnviar" onclick="enviar">Enviar</button>
-				</div>
+			<div class="caixaConversa"></div>
+			<div class="estiloCaixaMensagem">
+				<p contenteditable = "true" id="caixaMensagem" class="caixaMensagem"></p>
+				<button class="botaoEnviar" onclick="enviar">Enviar</button>
 			</div>
 		</div>
 
@@ -62,13 +61,12 @@
 
 			<div class="centro">
 				<div class="escrever">
-					<div class="texto">
-						<label>Gostaria de compartilhar algo conosco hoje?</label>
-					</div>
-					<p contenteditable = "true" id="caixaTexto" class="caixaTexto"></p>
+					<p contenteditable = "true" id="caixaTexto" class="caixaTexto">Gostaria de compartilhar algo conosco hoje?</p>
 					<button class="botaoPostar" onclick="postar()">Postar</button>
 				</div>
-				<div id="publicacoesDeTodos" class="localPublicaçoes"></div>
+				<div class="caixaLocalPublicacoes">
+					<div id="publicacoesDeTodos" class="localPublicacoes"></div>
+				</div>
 			</div>
 		</div>	
 	</abas>
