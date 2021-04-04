@@ -96,7 +96,7 @@
             }
 		}
 
-		function entrar(){
+		async function entrar(){
 			// pegar o que a pessoa digitou no input nomeUsuario
 			var nomeUsuario = document.getElementById("nomeUsuario").value
 			// pegar o que a pessoa digitou no input senha
@@ -121,8 +121,20 @@
 			const usuarioLogado = logar(nomeUsuario,senha);
             if(usuarioLogado){
                 localStorage.setItem('usuarioLogado', JSON.stringify(usuarioLogado));
+				let myHeaders = new Headers({
+        			"Content-Type": "application/json",
+        		});
+				console.log(usuarioLogado)
+        		let retorno = await fetch("http://localhost:8000/Usuarios/Cadastro/",{
+            		method: "POST",
+            		headers: myHeaders,
+            		body: JSON.stringify(usuarioLogado)
+        		})
+        		let meusDados = await retorno.json()
+        		console.log(meusDados)
                 window.location.href = "entrar.html";
-            }else{
+            }
+			else{
                 document.getElementById("nomeUsuario").value = "";
                 document.getElementById("senha").value = "";
                 alert("Nome de usuario ou senha incorretas");

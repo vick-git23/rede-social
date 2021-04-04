@@ -103,6 +103,14 @@ p {
 	margin-left: 10%;
 }
 
+.nomeEmbaixoFoto {
+	margin-bottom: 6%;
+    margin-top: 6%;
+    font-size: 29px;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
 .botaoAmigos {
 	background-color: white;
     border: 1px solid #ccc!important;
@@ -132,7 +140,14 @@ p {
 	width: 60%;
 	overflow: auto;
 	height: 527px;
+    flex-direction: column-reverse;
+}
 
+.caixaDosMeusAmigos {
+	float: left;
+	width: 60%;
+	overflow: auto;
+	height: 527px;
 }
 
 .caixaLocalPublicacoes {

@@ -28,16 +28,31 @@
 			<div>
 				<div class="informacoes">
 					<img src="../rede-social/fotoPerfil1.jpg" alt="Minha imagem" class="foto-perfil">
-					<h2 id="nomeDoUsuario"></h2>
-					<button id="amigos" onclick="amigos" class="botaoAmigos">Amigos</button>
-					<button id="editar" onclick="editar" class="botaoEditar">Editar Dados</button>
+					<center>
+						<h2 id="nomeDoUsuario" class="nomeEmbaixoFoto"></h2>
+					</center>
+					<button id="amigosPerfil" onclick="amigos()" class="botaoAmigos">Amigos</button>
+					<button id="editar" onclick="editar()" class="botaoEditar">Editar Dados</button>
 				</div>
 			</div>
 
 			<div class="caixaDosMeusPosts">
 				<div class="meusPostsNoPerfil" id="publicacoesDoUsuarioLogado"></div>
 			</div>
+
+			<div id="meusAmigos" class="invisivel">
+				<div class="caixaDosMeusAmigos">
+	
+				</div>
+			</div>
+	
+			<div id="editarDados" class="invisivel">
+				<div class="dadosDoUsuarioLogado">
+					
+				</div>
+			</div>
 		</div>
+
 
 		<div id="parteDaConversa" class="invisivel">
 			<div class="meusAmigos">
@@ -47,7 +62,7 @@
 			<div class="caixaConversa"></div>
 			<div class="estiloCaixaMensagem">
 				<p contenteditable = "true" id="caixaMensagem" class="caixaMensagem"></p>
-				<button class="botaoEnviar" onclick="enviar">Enviar</button>
+				<button class="botaoEnviar" onclick="enviar()">Enviar</button>
 			</div>
 		</div>
 
@@ -73,6 +88,15 @@
 
 	<script src="falsoBackend.js"></script>
 	<script>
+		async function CarregaNomeUsuario(){
+			var nomeUsuarioLogado = document.getElementById("nomeDoUsuario")
+			let retorna = await fetch("http://localhost:8000/Usuarios/")
+    		let meusDados = await retorna.json()
+    		console.log(meusDados)
+			nomeUsuarioLogado.innerText = meusDados[0].nomeUsuario
+		}
+		CarregaNomeUsuario();
+
 		function desaparece(){
 			document.getElementById("parteDoPerfil").classList.add("invisivel");
 			document.getElementById("parteDaConversa").classList.add("invisivel");
@@ -114,6 +138,22 @@
 			document.getElementById("aba3").classList.remove("botaoVerde");			
 		}
 		
+		function amigos() {
+			desaparece()
+			document.getElementById("meusAmigos").classList.remove("invisivel");
+
+			apareceBotaoVerde()
+			document.getElementById("amigodPerfil").classList.remove("botaoVerde");
+		}
+
+		function editar() {
+			desaparece()
+			document.getElementById("editarDados").classList.remove("invisivel");
+
+			apareceBotaoVerde()
+			document.getElementById("meusAmigos").classList.remove("botaoVerde");
+		}
+
 		function nomeDoUsuario() {
 			//let usuarioLogadoNoPerfil = retornaUsuarioLogado();
 				//publicacoes.appendChild(nomeUsuario);
@@ -128,7 +168,7 @@
 			let publicacoesDeTodos = document.getElementById("publicacoesDeTodos")
 
 			let todosOsPosts = retornaTodosOsPosts();
-			todosOsPosts.reverse();
+			//todosOsPosts.reverse();
 
 			// criar paragrafo que aparece nome do usuario
 			publicacoesDeTodos.innerHTML = ""
